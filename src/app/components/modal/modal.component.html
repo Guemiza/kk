@@ -1,0 +1,113 @@
+<!-- Modal -->
+<div id="modalEvent" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          {{ !this.dataApi.selectedEvent.id ? 'New Event' : 'Update Event'}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form name ="formEvent" #formEvent ="ngForm" (ngSubmit)="onSaveEvent(formEvent)">
+          <input type="text" name="id" [(ngModel)]="this.dataApi.selectedEvent.id">
+
+          <div class="form-group">
+            <label for="titre">Titre</label>
+            <input type="text" id="titre" name="titre" class="form-control" placeholder="Titre"
+              [(ngModel)]="this.dataApi.selectedEvent.titre">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="name">name</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Name"
+                [(ngModel)]="this.dataApi.selectedEvent.name">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="domaine">Domaine</label>
+              <input type="text" id="domaine" name="domaine" class="form-control" placeholder="Domaine"
+                [(ngModel)]="this.dataApi.selectedEvent.domaine">
+            </div>
+
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="adresse">Adresse</label>
+              <input type="text" id="adresse" name="adresse" class="form-control" placeholder="Adresse"
+                [(ngModel)]="this.dataApi.selectedEvent.adresse">
+            </div>
+
+
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="ville">Ville</label>
+              <select name="ville" id="ville" class="form-control" [(ngModel)]="this.dataApi.selectedEvent.ville">
+                <option value="Tunis">Tunis</option>
+                <option value="Sousse">Sousse</option>
+                <option value="Monastir">Monastir</option>
+                <option value="Mahdia">Mahdia</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="prix">Prix</label>
+              <input type="text" name="prix" class="form-control" placeholder="0,00dt"
+                [(ngModel)]="this.dataApi.selectedEvent.prix">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="date">Date</label>
+              <input type="date" name="date" class="form-control" placeholder="Date"
+                [(ngModel)]="this.dataApi.selectedEvent.date">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="num">Numéro du télephone</label>
+              <input type="text" name="numero" class="form-control" placeholder="veuillez entre votre numéro"
+                [(ngModel)]="this.dataApi.selectedEvent.numero">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="email">Email</label>
+              <input type="text" id="email" name="contact" class="form-control" placeholder="xyz@gmail.com"
+                [(ngModel)]="this.dataApi.selectedEvent.email">
+            </div>
+
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="offre">Offre</label>
+              <select name="offre" id="offre" class="form-control">
+                <option value="gratuit">gratuit</option>
+                <option value="payante">payante</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="descripcion">Description :</label>
+            <textarea name="descripcion" id="descripcion" class="form-control" cols="50" rows="4"
+              [(ngModel)]="this.dataApi.selectedEvent.descripcion"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+            <button type="submit" ng-click="onSaveEvent" class="btn btn-primary float-right">Save Event</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
