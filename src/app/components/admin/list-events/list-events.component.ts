@@ -35,8 +35,5 @@ getListEvents(){
     this.dataApi.deleteEvent(idEvent);
 }
 }
-  onPreUpdateEvent(event: EventInterface){
-    console.log ('EVENT' , event);
-    this.dataApi.selectedEvent = Object.assign({}, event);
-  }
+
 }
